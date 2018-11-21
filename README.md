@@ -33,9 +33,15 @@ Run the forever command
 ## Run the application
 
 If you built the application on the OSU servers, make sure you are connected to the OSU VPN before accesing the URL below.
-<flip3.engr.oregonstate.edu:58188>
+
+```bash
+flip3.engr.oregonstate.edu:58188
+```
 
 Note: check which version of flip you build the application on, as the app could be running on any of the following 3 URLS:
-<flip1.engr.oregonstate.edu:58188>
-<flip2.engr.oregonstate.edu:58188>
-<flip3.engr.oregonstate.edu:58188>
+
+```bash
+flip1.engr.oregonstate.edu:58188
+flip2.engr.oregonstate.edu:58188
+flip3.engr.oregonstate.edu:58188
+```
