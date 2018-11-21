@@ -3,7 +3,28 @@
 Meal Planner is a simple CRUD application that allows users to plan/track their meals.
 This program was made as a group project for Oregon State University - CS 361 (Software Engineering I).
 
-## Build the application
+## Build the application on localhost
+
+In the root directory, install dependencies
+
+```bash
+npm install
+```
+
+Declare a port number to use in app.js
+
+```javascript
+/* in app.js */
+app.set("port", 58188); // Set port number to 58188
+```
+
+Run node app.js
+
+```bash
+node app.js
+```
+
+## Build the application (using forever on OSU servers)
 
 In the root directory, install dependencies
 
@@ -32,7 +53,13 @@ Run the forever command
 
 ## Run the application
 
-If you built the application on the OSU servers, make sure you are connected to the OSU VPN before accesing the URL below.
+If built on localhost, you can access the application using the URL below:
+
+```
+localhost:58818
+```
+
+If you built the application on the OSU servers, make sure you are connected to the OSU VPN before accesing the URL below:
 
 ```
 http://flip3.engr.oregonstate.edu:58188
