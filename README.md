@@ -8,7 +8,7 @@ This program was made as a group project for Oregon State University - CS 361 (S
 In the root directory, install dependencies
 
 ```bash
-npm install
+$ npm install
 ```
 
 Declare a port number to use in app.js
@@ -21,7 +21,7 @@ app.set("port", 58188); // Set port number to 58188
 Run node app.js
 
 ```bash
-node app.js
+$ node app.js
 ```
 
 ## Build the application (using forever on OSU servers)
@@ -29,13 +29,13 @@ node app.js
 In the root directory, install dependencies
 
 ```bash
-npm install
+$ npm install
 ```
 
 Install forever (CLI tool to ensure that a given script runs continuously)
 
 ```bash
-npm install forever
+$ npm install forever
 ```
 
 Declare a port number to use in app.js
@@ -48,7 +48,7 @@ app.set("port", 58188); // Set port number to 58188
 Run the forever command
 
 ```bash
-./node_modules/forever/bin/forever start app.js 58188
+$ ./node_modules/forever/bin/forever start app.js 58188
 ```
 
 ## Run the application
@@ -56,7 +56,7 @@ Run the forever command
 If built on localhost, you can access the application using the URL below:
 
 ```
-localhost:58818
+$ localhost:58818
 ```
 
 If you built the application on the OSU servers, make sure you are connected to the OSU VPN before accesing the URL below:
