@@ -1,0 +1,65 @@
+<head>
+    <title>Fitness Tracker - Workouts</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+    <h1>Workouts</h1>
+
+        <!-- Main menu for the user to navigate to other pages -->
+        <a href="/home">Home</a> | <b>Workouts</b> | <a href="/plans">Plan</a> | <a href="/log">Log</a>
+        <a href="/"><button type="submit">Logout</button></a>
+
+        <form id="addWorkoutForm">
+        <h4>Add Exercise</h4>
+        
+        Exercise Name:
+        <input type="text" name="exercise" id="exercise" required="required"><br>
+        
+        Muscle Group Targeted:
+        <input type="text" name="musclegroup" id="musclegroup"><br>
+        <input type="submit" name="add exercise" value="Add Exercise" id="addExerciseSubmit">
+        <br><br><br>
+
+        Filter By Muscle Group:
+        <select id="filter">
+        <option value="" selected disabled hidden>Choose here</option>
+        {{#if muscles}}
+            {{#each muscles}}
+                <option value="{{this.musclegroup}}">{{this.musclegroup}}</option>
+            {{/each}}
+        {{/if}}
+        <option value="All">All</option>
+        </select>
+        <button type="button" name="muscleGroupSearchButton" id="muscleGroupSearchButton" onclick="muscleGroupSearch()">Search</button>
+
+    <table id="workoutTable">
+    	<tr>
+    		<th>ID</th>
+    		<th>Exercise Name</th>
+            <th>Muscle Group</th>
+            <th>Delete</th>
+    	</tr>
+    	{{#if results}}
+    		{{#each results}}
+    			<tr>
+                    <td>{{this.id}}</td>
+    				<td>{{this.name}}</td>
+    				<td>{{this.musclegroup}}</td>
+                    <td><input type="button" name="delete" value="Delete" onClick="deleteRow('workoutTable', {{this.id}})"></td>
+                    <td><label hidden>row{{this.id}}</label></td>
+    			</tr>
+    		{{/each}}
+    	{{/if}}
+    </table>
+    </form>
+    <br>
+
+</body>
+
+<script src="workouts.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

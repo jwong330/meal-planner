@@ -1,0 +1,55 @@
+<head>
+    <title>Fitness Tracker - Plan</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+
+<body>    
+   <h1>Plan</h1>
+
+    <!-- Main menu for the user to navigate to other pages -->
+    <a href="/home">Home</a> | <a href="/workouts">Workouts</a> | <b>Plan</b> | <a href="/log">Log</a>
+    <a href="/"><button type="submit">Logout</button></a>
+
+    <!-- Create a new plan -->
+    <form id="addPlanForm">
+        <h4>Add Plan</h4>
+            <label for="planname"><b>Plan Name</b></label>
+            <input type="text" placeholder="Plan Name (ex. Burnout)" name="pname" id="pname" required><br>
+            <label for="uidFilter"><b>User ID</b></label>
+            <select name="uidFilter" id="uidFilter" required>
+            {{#if uniqueusers}}
+                {{#each uniqueusers}}
+                    <option value="{{this.id}}">{{this.username}}</option>
+                {{/each}}
+            {{/if}}
+            </select><br>
+            <input type="submit" name="add plan" value="Add Plan" id="addPlanSubmit">
+    </form><br><br>
+
+    <!-- Fill table of plans -->
+    <table id="plansTable">
+        <tr>
+            <th>Plan ID</th>
+            <th>Plan Name</th>
+            <th>User ID</th>
+        </tr>
+        {{#if results}}
+            {{#each results}}
+                <tr>
+                    <td>{{this.id}}</td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.user_id}}</td>
+                    <td><input type="button" name="deletePlanButton" id="deleteButton+{{this.id}}" value="Delete" onClick="deleteRow('plansTable', {{this.id}})"></td>
+                    <td><label hidden>row{{this.id}}</label></td>
+                </tr>
+            {{/each}}
+        {{/if}}
+    </table>
+</body>
+
+<script src="plans.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

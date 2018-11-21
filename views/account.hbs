@@ -1,0 +1,40 @@
+<head>
+    <title>Fitness Tracker - Create Account</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+    <h3>Create an Account</h3>
+
+    <!-- Create a new log entry -->
+    <form id="addAccForm" action="/insert-account" method="post">
+    
+            <label for="userEntry"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="userEntry" id="userEntry" required><br>
+            
+            <label for="passwordEntry"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="passwordEntry" id="passwordEntry" required><br><br>
+            
+            <label for="fnameEntry"><b>First Name</b></label>
+            <input type="text" placeholder="Enter First Name" name="fnameEntry" id="fnameEntry" required><br>
+
+            <label for="lnameEntry"><b>Last Name</b></label>
+            <input type="text" placeholder="Enter Last Name" name="lnameEntry" id="lnameEntry" required><br>
+            
+            <label for="emailEntry"><b>Email Address</b></label>
+            <input type="email" placeholder="Enter Email Address" name="emailEntry" id="emailEntry" required><br>
+
+            <input type="submit" name="createAccSubmit" value="Create Account" id="createAccSubmit">
+    </form><br>
+    <a href="/">Go back to login</a>
+
+
+
+</body>
+
+<script src="account.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
