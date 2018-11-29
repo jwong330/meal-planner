@@ -31,7 +31,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
 //Set up port
-app.set("port", 58818);
+app.set("port", 58825);
 
 app.use("/", routes);
 
